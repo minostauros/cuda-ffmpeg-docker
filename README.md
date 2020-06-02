@@ -1,6 +1,6 @@
 # cuda-ffmpeg-docker
-![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/tigerdockermediocore/cuda-ffmpeg-docker)
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tigerdockermediocore/cuda-ffmpeg-docker)
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/tigerdockermediocore/cuda-ffmpeg-docker)](https://hub.docker.com/r/tigerdockermediocore/cuda-ffmpeg-docker)
+[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tigerdockermediocore/cuda-ffmpeg-docker)](https://hub.docker.com/r/tigerdockermediocore/cuda-ffmpeg-docker)
 
 FFMPEG with CUDA for devel purpose.
 Brought from [jrottenberg/ffmpeg](https://github.com/jrottenberg/ffmpeg)
