@@ -4,7 +4,11 @@
 #
 # ffmpeg docker - https://hub.docker.com/r/jrottenberg/ffmpeg/
 
-FROM    nvidia/cuda:10.2-devel-ubuntu18.04
+ARG CUDA_VERSION=10.2
+ARG CUDNN_VERSION=7
+ARG UBUNTU_VERSION=18.04
+
+FROM nvcr.io/nvidia/cuda:${CUDA_VERSION}-cudnn${CUDNN_VERSION}-devel-ubuntu${UBUNTU_VERSION}
 
 ENV     NVIDIA_DRIVER_CAPABILITIES compute,utility,video
 WORKDIR     /tmp/workdir

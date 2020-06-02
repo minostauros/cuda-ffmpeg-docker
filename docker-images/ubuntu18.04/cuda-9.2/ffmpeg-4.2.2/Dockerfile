@@ -6,7 +6,11 @@
 #
 #
 
-FROM    nvidia/cuda:9.2-devel-ubuntu18.04
+ARG CUDA_VERSION=9.2
+ARG CUDNN_VERSION=7
+ARG UBUNTU_VERSION=18.04
+
+FROM nvcr.io/nvidia/cuda:${CUDA_VERSION}-cudnn${CUDNN_VERSION}-devel-ubuntu${UBUNTU_VERSION}
 
 ENV	    NVIDIA_DRIVER_CAPABILITIES compat32,compute,video
 WORKDIR     /tmp/workdir
