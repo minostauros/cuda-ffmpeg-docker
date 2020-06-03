@@ -536,5 +536,5 @@ RUN \
         cp -r ${PREFIX}/share/* /usr/local/share/ && \
         LD_LIBRARY_PATH=/usr/local/lib ffmpeg -buildconf
 
-CMD         ["--help"]
-ENTRYPOINT  ["ffmpeg"]
+ENTRYPOINT  [""]
+CMD         ["ffmpeg", "--help"]
