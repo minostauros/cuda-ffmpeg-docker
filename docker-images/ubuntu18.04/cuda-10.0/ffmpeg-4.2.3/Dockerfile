@@ -498,7 +498,7 @@ RUN     apt-get -yqq update && \
         nasm \
         perl \
         pkg-config \
-        libssl-dev
+        libssl-dev \
         uuid-dev \
         yasm \
         zlib1g-dev && \
