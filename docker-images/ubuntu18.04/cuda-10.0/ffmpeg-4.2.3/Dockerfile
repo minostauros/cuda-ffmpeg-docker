@@ -486,25 +486,6 @@ RUN     apt-get -yqq update && \
         cd tools && \
         make qt-faststart && cp qt-faststart ${PREFIX}/bin/ && \
 ## cleanup
-    apt-get -y remove \
-        autoconf \
-        automake \
-        cmake \
-        libexpat1-dev \
-        g++ \
-        gcc \
-        gperf \
-        libtool \
-        make \
-        nasm \
-        perl \
-        pkg-config \
-        libssl-dev \
-        uuid-dev \
-        yasm \
-        zlib1g-dev && \
-    apt-get autoremove -y && \
-    apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
         LD_LIBRARY_PATH="${PREFIX}/lib:${PREFIX}/lib64:${LD_LIBRARY_PATH}" ldd ${PREFIX}/bin/ffmpeg | grep opt/ffmpeg | cut -d ' ' -f 3 | xargs -i cp {} /usr/local/lib/ && \
         cp ${PREFIX}/bin/* /usr/local/bin/ && \
