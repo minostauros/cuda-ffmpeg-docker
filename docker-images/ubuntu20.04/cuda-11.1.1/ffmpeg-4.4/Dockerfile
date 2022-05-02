@@ -7,6 +7,7 @@
 ARG CUDA_VERSION=11.1.1
 ARG CUDNN_VERSION=8
 ARG UBUNTU_VERSION=20.04
+ARG UBUNTU_VERSION_WO_DOT=2004
 
 FROM nvcr.io/nvidia/cuda:${CUDA_VERSION}-cudnn${CUDNN_VERSION}-devel-ubuntu${UBUNTU_VERSION}
 
@@ -75,8 +76,8 @@ ARG         LD_LIBRARY_PATH="/opt/ffmpeg/lib:/opt/ffmpeg/lib64:/usr/lib64:/usr/l
 
 # Deal with NVIDIA repository key update: https://forums.developer.nvidia.com/t/notice-cuda-linux-repository-key-rotation/212771
 RUN     apt-key del 7fa2af80 && \
-        apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub && \
-        apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub && \
+        apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu${UBUNTU_VERSION_WO_DOT}/x86_64/3bf863cc.pub && \
+        apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu${UBUNTU_VERSION_WO_DOT}/x86_64/7fa2af80.pub && \
 # prerequisites
         apt-get -yqq update && \
         apt-get install -yq --no-install-recommends ca-certificates expat libgomp1 libxcb-shape0-dev && \
