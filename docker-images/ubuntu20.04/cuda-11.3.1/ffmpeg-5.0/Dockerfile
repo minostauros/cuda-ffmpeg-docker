@@ -339,15 +339,17 @@ RUN     apt-key del 7fa2af80 && \
         make && \
         make install && \
         rm -rf ${DIR} && \
+## aom
         DIR=/tmp/aom && \
-        git clone --branch ${AOM_VERSION} --depth 1 https://aomedia.googlesource.com/aom ${DIR} ; \
-        cd ${DIR} ; \
-        rm -rf CMakeCache.txt CMakeFiles ; \
-        mkdir -p ./aom_build ; \
-        cd ./aom_build ; \
-        cmake -DCMAKE_INSTALL_PREFIX="${PREFIX}" -DBUILD_SHARED_LIBS=1 ..; \
-        make ; \
-        make install ; \
+        mkdir -p ${DIR} && \
+        cd ${DIR} && \
+        git clone --branch ${AOM_VERSION} --depth 1 https://aomedia.googlesource.com/aom ${DIR} && \
+        rm -rf CMakeCache.txt CMakeFiles && \
+        mkdir -p ./aom_build && \
+        cd ./aom_build && \
+        cmake -DCMAKE_INSTALL_PREFIX="${PREFIX}" -DBUILD_SHARED_LIBS=1 .. && \
+        make && \
+        make install && \
         rm -rf ${DIR} && \
 ## libxcb (and supporting libraries) for screen capture https://xcb.freedesktop.org/
         DIR=/tmp/xorg-macros && \
