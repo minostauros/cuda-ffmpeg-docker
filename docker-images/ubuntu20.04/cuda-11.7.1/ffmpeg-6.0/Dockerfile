@@ -13,7 +13,7 @@ FROM nvcr.io/nvidia/cuda:${CUDA_VERSION}-cudnn${CUDNN_VERSION}-devel-ubuntu${UBU
 ENV     NVIDIA_DRIVER_CAPABILITIES compute,utility,video
 WORKDIR     /tmp/workdir
 
-ENV        NVIDIA_HEADERS_VERSION=11.1.5.0
+ENV        NVIDIA_HEADERS_VERSION=12.0.16.0
 
 ENV         FFMPEG_VERSION=6.0 \
             AOM_VERSION=v1.0.0 \
