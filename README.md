@@ -1,5 +1,6 @@
 # cuda-ffmpeg-docker
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tigerdockermediocore/cuda-ffmpeg-docker)](https://hub.docker.com/r/tigerdockermediocore/cuda-ffmpeg-docker)
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/tigerdockermediocore/cuda-ffmpeg-docker)](https://hub.docker.com/r/tigerdockermediocore/cuda-ffmpeg-docker)
 [![Build all changed Dockerfiles](https://github.com/minostauros/cuda-ffmpeg-docker/actions/workflows/build_and_push_changed_dockerfiles.yml/badge.svg)](https://github.com/minostauros/cuda-ffmpeg-docker/pkgs/container/cuda-ffmpeg-docker)
 [![Manually build on Github Actions](https://github.com/minostauros/cuda-ffmpeg-docker/actions/workflows/manual_build.yml/badge.svg)](https://github.com/minostauros/cuda-ffmpeg-docker/pkgs/container/cuda-ffmpeg-docker)
 
