@@ -61,6 +61,8 @@ jobs:
         run: |
           filepath=${{ matrix.files }};
           echo "path=$filepath" >> $GITHUB_OUTPUT;
+          workdir=$(dirname $filepath);
+          echo "workdir=${workdir}" >> $GITHUB_OUTPUT;
           tag=$(echo $filepath | sed 's/docker-images\/ubuntu\([0-9\.]*\).*\/cuda-\([0-9]*\)[\.]*\([0-9]*\)[^/]*\/ffmpeg-\([0-9\.]*\)[^/]*.*Dockerfile/\4-cu\2\3/' | sed 's/\(.*\)\/Dockerfile/\1/' | sed 's/\//-/g');
           echo "tag=${tag}" >> $GITHUB_OUTPUT;
       -
@@ -80,7 +82,7 @@ jobs:
         name: Build and push Docker Hub
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ${{ steps.dockerfile.outputs.workdir }}
           file: ${{ steps.dockerfile.outputs.path }}
           push: true
           tags: |
